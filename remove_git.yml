@@ -1,0 +1,17 @@
+
+---
+
+
+- hosts: all
+  become: true
+  tasks:
+ 
+  - name: updating repository index!
+    yum:
+      update_cache: yes
+
+
+  - name: removing  git  package
+    yum:
+      name: git
+      state: absent
